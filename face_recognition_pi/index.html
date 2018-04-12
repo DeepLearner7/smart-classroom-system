@@ -1,0 +1,70 @@
+<html>
+<head>
+<title> controller </title>
+
+<style type="text/css">
+    body{
+		background-image: url('wallpaper.jpg');
+		background-size: cover;
+    }
+	#pikachu img{
+
+	}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+function turnon() {
+
+	$('#pikachu_on').css('display','block');
+	$('#pikachu_off').css('display','none');
+
+	var data = {
+		"flag" : 'true'
+	}
+	
+	$.ajax({
+		url : '/index.html',
+		data : data,
+		dataType : "json",
+		type : 'POST',
+		success	: function(data) {
+			console.log('Query sent to server successfully');
+		}
+	});
+}
+function turnoff() {
+	$('#pikachu_off').css('display','block');
+	$('#pikachu_on').css('display','none');
+
+	var data = {
+		"flag" : 'false'
+	}
+	
+	
+	
+	$.ajax({
+		url : '/index.html',
+		data : data,
+		dataType : "json",
+		type : 'POST',
+		success	: function(data) {
+			console.log('Query sent to server successfully');
+		}
+	});
+}
+</script>
+</head>
+<body>
+	<div id = 'pikachu_on' style="position:absolute; width:25%; height:50%; left:42%; top:5%; display:none;">
+        <img src="pikachuon.png " width="300" height="300">
+	</div>
+	<div id = 'pikachu_off' style="position:absolute; width:25%; height:50%; left:42%; top:5%; display:none;">
+        <img src="pikachuoff.jpg " width="300" height="300">
+	</div>
+	
+
+    <button style="width:10%; height:20%; margin-left:30%; margin-right:25%; margin-top:25%" onclick="turnon()" type="button"><b>Switch On</b></button>
+    <button style="width:10%; height:20%; margin-right:10%" onclick="turnoff()" type="button"><b>Switch Off</b></button>
+</body>
+</html>

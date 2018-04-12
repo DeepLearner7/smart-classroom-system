@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <button onclick="getimage()">Take Image </button>
+    <br><br>
+    <button onclick="sendToCloud()">Mark Attendance</button>
+    <br><br>
+    <br><br>
+    <input type='text' id = "name" placeholder="name">
+    <br><br>
+    <button onclick="getRegistrationImage()">Take Registration Image </button>
+    <br><br>
+    <button onclick="enrollStudent()">Enroll Student</button>
+    
+</body>
+<script>
+    function getimage() {
+        $.ajax({
+            url : '/transfer_image',
+            dataType : "json",
+            type : 'GET',
+            success	: function(data) {
+
+                console.log("Aa gyi photu");
+                    
+
+            }
+		});
+    }
+
+    function sendToCloud() {
+        $.ajax({
+            url : '/sendToCloud',
+            dataType : "json",
+            type : 'GET',
+            success	: function(data) {
+
+                console.log("Chali gyi photu");
+                    
+
+            }
+		});
+    }
+
+    function getRegistrationImage() {
+        
+        var name = document.getElementById('name').value;
+
+        var data = {
+            'name' : name
+        }
+
+        $.ajax({
+            url : '/get_reg_image',
+            data : data,
+            dataType : "json",
+            type : 'GET',
+            success	: function(data) {
+
+                console.log("Chali gyi photu");
+            }
+		});
+    }
+
+    function enrollStudent() {
+        
+        var name = document.getElementById('name').value;
+
+        var data = {
+            'name' : name
+        }
+
+        $.ajax({
+            url : '/enroll_stud',
+            data : data,
+            dataType : "json",
+            type : 'GET',
+            success	: function(data) {
+
+                console.log("Chali gyi photu");
+            }
+		});
+    }
+
+</script>
+
+</html>

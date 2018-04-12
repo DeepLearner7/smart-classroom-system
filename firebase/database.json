@@ -1,0 +1,28 @@
+{
+    "attendance_count" :{
+        "3334" : {
+            "date" : 30,
+            "name" : "Reshav Kumar",
+            "attendance" : 6
+        },
+        "3339" : {
+            "date" : 30,
+            "name" : "Saurabh Shubham",
+            "attendance" : 2
+        },
+        "3331" : {
+            "date" : 30,
+            "name" : "Rahul Kumar",
+            "attendance" : 20
+        },
+        "3333" : {
+            "date" : 30,
+            "name" : "Rajiv Kumar Tiwari",
+            "attendance" : 11
+        }
+    },
+    "total_lectures" :{
+        "date" : 29,
+        "lectures" : 30 
+    }
+}
